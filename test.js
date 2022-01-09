@@ -7,7 +7,7 @@ const redis = require("redis").createClient(redis_config);
 
 app = require('express')();
 server = require('http').Server(app);
-server.listen(message.port, '127.0.0.1');
+server.listen('9696', '127.0.0.1');
 
 app.get('/', function(request, response) {
     response.end(' Hello!!');
