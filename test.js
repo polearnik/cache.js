@@ -16,12 +16,20 @@ app.get('/', function(request, response) {
 
 app.get('/get', function(request, response) {
     redis.get(request.query.key, function(error, data) {
+        if (error) {
+            response.end(error);
+            return
+        }
         response.end(data);
     })
 });
 
 app.get('/put', function(request, response) {
     redis.set(request.query.key, request.query.data, function(error, data) {
+        if (error) {
+            response.end(error);
+            return
+        }
         response.end('ok');
     })
 });
