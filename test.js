@@ -1,6 +1,7 @@
 let redis_config = {
     db: process.env.REDIS_DB,
     host: process.env.REDIS_HOST,
+    password: process.env.REDIS_PASSWORD,
 };
 
 const redis = require("redis").createClient(redis_config);
